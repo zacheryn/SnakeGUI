@@ -1,0 +1,932 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Snake</class>
+ <widget class="QMainWindow" name="Snake">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Snake</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>200</y>
+      <width>600</width>
+      <height>300</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>600</width>
+      <height>300</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>600</width>
+      <height>300</height>
+     </size>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <property name="lineWidth">
+     <number>10</number>
+    </property>
+    <property name="midLineWidth">
+     <number>10</number>
+    </property>
+    <widget class="QLabel" name="GameBoard">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>600</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>600</width>
+       <height>300</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>600</width>
+       <height>300</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>MS Serif</family>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <property name="text">
+      <string>Text</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::TextFormat::PlainText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+     </property>
+     <property name="indent">
+      <number>0</number>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::TextInteractionFlag::NoTextInteraction</set>
+     </property>
+    </widget>
+    <widget class="Line" name="line_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>45</y>
+       <width>600</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>68</y>
+       <width>600</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>91</y>
+       <width>600</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_5">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>114</y>
+       <width>600</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_6">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>137</y>
+       <width>600</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_7">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>160</y>
+       <width>600</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_8">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>183</y>
+       <width>600</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_9">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>206</y>
+       <width>600</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_10">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>229</y>
+       <width>600</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_11">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>252</y>
+       <width>600</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_12">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>22</y>
+       <width>600</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_13">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>274</y>
+       <width>600</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline">
+     <property name="geometry">
+      <rect>
+       <x>12</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_2">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_3">
+     <property name="geometry">
+      <rect>
+       <x>36</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_4">
+     <property name="geometry">
+      <rect>
+       <x>48</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_5">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_6">
+     <property name="geometry">
+      <rect>
+       <x>72</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_7">
+     <property name="geometry">
+      <rect>
+       <x>84</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_8">
+     <property name="geometry">
+      <rect>
+       <x>96</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_9">
+     <property name="geometry">
+      <rect>
+       <x>108</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_10">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_11">
+     <property name="geometry">
+      <rect>
+       <x>132</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_12">
+     <property name="geometry">
+      <rect>
+       <x>144</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_13">
+     <property name="geometry">
+      <rect>
+       <x>156</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_14">
+     <property name="geometry">
+      <rect>
+       <x>168</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_15">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_16">
+     <property name="geometry">
+      <rect>
+       <x>192</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_17">
+     <property name="geometry">
+      <rect>
+       <x>204</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_18">
+     <property name="geometry">
+      <rect>
+       <x>216</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_19">
+     <property name="geometry">
+      <rect>
+       <x>228</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_20">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_21">
+     <property name="geometry">
+      <rect>
+       <x>252</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_22">
+     <property name="geometry">
+      <rect>
+       <x>264</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_23">
+     <property name="geometry">
+      <rect>
+       <x>276</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_24">
+     <property name="geometry">
+      <rect>
+       <x>288</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_25">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_26">
+     <property name="geometry">
+      <rect>
+       <x>312</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_27">
+     <property name="geometry">
+      <rect>
+       <x>324</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_28">
+     <property name="geometry">
+      <rect>
+       <x>336</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_29">
+     <property name="geometry">
+      <rect>
+       <x>348</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_30">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_31">
+     <property name="geometry">
+      <rect>
+       <x>372</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_32">
+     <property name="geometry">
+      <rect>
+       <x>384</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_33">
+     <property name="geometry">
+      <rect>
+       <x>396</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_34">
+     <property name="geometry">
+      <rect>
+       <x>408</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_35">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_36">
+     <property name="geometry">
+      <rect>
+       <x>432</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_37">
+     <property name="geometry">
+      <rect>
+       <x>444</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_38">
+     <property name="geometry">
+      <rect>
+       <x>456</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_39">
+     <property name="geometry">
+      <rect>
+       <x>468</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_40">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_41">
+     <property name="geometry">
+      <rect>
+       <x>492</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_42">
+     <property name="geometry">
+      <rect>
+       <x>504</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_43">
+     <property name="geometry">
+      <rect>
+       <x>516</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_44">
+     <property name="geometry">
+      <rect>
+       <x>528</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_45">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_46">
+     <property name="geometry">
+      <rect>
+       <x>552</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_47">
+     <property name="geometry">
+      <rect>
+       <x>564</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_48">
+     <property name="geometry">
+      <rect>
+       <x>576</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="Vline_49">
+     <property name="geometry">
+      <rect>
+       <x>588</x>
+       <y>0</y>
+       <width>3</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuSnake">
+    <property name="title">
+     <string>Snake</string>
+    </property>
+   </widget>
+   <addaction name="menuSnake"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
