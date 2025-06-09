@@ -2,8 +2,12 @@
 #define SNAKE_H
 
 #include <QMainWindow>
+#include <QWidget>
 #include <QEvent>
 #include <QKeyEvent>
+#include <QtMultimedia/QMediaPlayer>
+#include <QtMultimedia/QAudioOutput>
+#include <QtMultimedia/QSoundEffect>
 #include <random>
 #include <memory>
 #include <deque>
@@ -14,6 +18,23 @@ class Snake;
 }
 QT_END_NAMESPACE
 
+class SoundPlayer : public QWidget
+{
+    Q_OBJECT
+
+public:
+    SoundPlayer(QWidget *parent = nullptr);
+    void playFood(float volume);
+    void playMusic();
+    void setMusicVolume(float volume);
+    ~SoundPlayer();
+
+private:
+    QSoundEffect food;
+    QMediaPlayer *player;
+    QAudioOutput *audioOutput;
+};
+
 class Snake : public QMainWindow
 {
     Q_OBJECT
@@ -22,6 +43,11 @@ public:
     Snake(QWidget *parent = nullptr);
     bool eventFilter(QObject *target, QEvent *event) ;
     ~Snake();
+
+private slots:
+    void on_VolumeSlider_sliderMoved(int position);
+
+    void on_VolumeSlider_valueChanged(int value);
 
 private:
     // Stores the x and y coordinates to know where something is on the board
@@ -55,6 +81,7 @@ private:
     Coord food;
     std::deque<Coord> snake;
     bool alive = true;
+    SoundPlayer player;
 
     // Useful Constants
     static constexpr QChar HEAD = 'H';

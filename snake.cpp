@@ -4,6 +4,38 @@
 #include <chrono>
 #include <stdexcept>
 #include <QDebug>
+#include <QUrl>
+
+SoundPlayer::SoundPlayer(QWidget *parent)
+    : QWidget(parent)
+    , food(this)
+    , player(new QMediaPlayer)
+    , audioOutput(new QAudioOutput)
+{
+    food.setSource(QUrl::fromLocalFile("Sounds/food.wav"));
+    food.setLoopCount(1);
+    player->setAudioOutput(audioOutput);
+    player->setSource(QUrl::fromLocalFile("Sounds/music.wav"));
+    player->setLoops(QMediaPlayer::Infinite);
+    player->play();
+}
+
+SoundPlayer::~SoundPlayer()
+{
+    delete player;
+    delete audioOutput;
+}
+
+void SoundPlayer::playFood(float volume)
+{
+    food.setVolume(volume);
+    food.play();
+}
+
+void SoundPlayer::setMusicVolume(float volume)
+{
+    audioOutput->setVolume(volume);
+}
 
 Snake::Snake(QWidget *parent)
     : QMainWindow(parent)
@@ -159,6 +191,8 @@ void Snake::updateSnake(const Direction dir)
     bool ate = findChar(next) == FOOD;
 
     if (ate) {
+        // qDebug("Ate food");
+        player.playFood(static_cast<float>(ui->VolumeSlider->sliderPosition())/100);
         snake.push_front(next);
         resetBoard();
         placeSnake();
@@ -194,3 +228,16 @@ void Snake::setBoard()
 {
     ui->GameBoard->setText(board);
 }
+
+void Snake::on_VolumeSlider_sliderMoved(int position)
+{
+    ui->VolumeDisplay->setText(QString::number(position));
+    player.setMusicVolume(static_cast<float>(position)/100);
+}
+
+void Snake::on_VolumeSlider_valueChanged(int value)
+{
+    ui->VolumeDisplay->setText(QString::number(value));
+    player.setMusicVolume(static_cast<float>(value)/100);
+}
+
